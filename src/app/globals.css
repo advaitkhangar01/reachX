@@ -1,26 +1,232 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand Colors */
+  --color-rx-purple-deep: #5A2193;
+  --color-rx-purple-vivid: #9B25AA;
+  --color-rx-magenta: #DA334F;
+  --color-rx-crimson: #AD2A66;
+  --color-rx-coral: #E3514C;
+  --color-rx-orange: #E9572C;
+
+  /* Base Colors */
+  --color-rx-base-00: #FFFFFF;
+  --color-rx-base-01: #FDFBFF;
+  --color-rx-base-02: #F8F8FA;
+  --color-rx-base-03: #F4F5F7;
+  --color-rx-base-04: #EDECF4;
+
+  /* Text Colors */
+  --color-rx-text-primary: #0D0B14;
+  --color-rx-text-secondary: #3D3652;
+  --color-rx-text-muted: #7B6FA0;
+  --color-rx-text-ghost: #B0A8C8;
+
+  /* Spacing */
+  --spacing-rx-1: 8px;
+  --spacing-rx-2: 16px;
+  --spacing-rx-3: 24px;
+  --spacing-rx-4: 32px;
+  --spacing-rx-5: 48px;
+  --spacing-rx-6: 64px;
+  --spacing-rx-7: 96px;
+  --spacing-rx-8: 128px;
+
+  /* Border Radius */
+  --radius-rx-sm: 8px;
+  --radius-rx-md: 16px;
+  --radius-rx-lg: 24px;
+  --radius-rx-xl: 32px;
+  --radius-rx-pill: 9999px;
+
+  /* Shadows */
+  --shadow-rx-xs: 0 1px 3px rgba(90, 33, 147, 0.06);
+  --shadow-rx-sm: 0 4px 16px rgba(90, 33, 147, 0.08);
+  --shadow-rx-md: 0 8px 32px rgba(90, 33, 147, 0.12);
+  --shadow-rx-lg: 0 20px 60px rgba(90, 33, 147, 0.16);
+  --shadow-rx-glow: 0 0 40px rgba(155, 37, 170, 0.20), 0 0 80px rgba(218, 51, 79, 0.10);
+  --shadow-rx-glow-sm: 0 0 20px rgba(155, 37, 170, 0.15);
+
+  /* Font Families */
+  --font-display: "Instrument Serif", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  /* Glassmorphism */
+  --color-rx-glass-bg: rgba(255, 255, 255, 0.72);
+  --color-rx-glass-border: rgba(90, 33, 147, 0.12);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Gradients */
+  --rx-grad-primary: linear-gradient(135deg, #5A2193 0%, #DA334F 50%, #E9572C 100%);
+  --rx-grad-soft: linear-gradient(135deg, #9B25AA22 0%, #DA334F11 100%);
+  --rx-grad-card: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 250, 0.6) 100%);
+  --rx-grad-border: linear-gradient(135deg, #9B25AA40, #DA334F30, #E9572C20);
+
+  /* Glassmorphism */
+  --rx-glass-bg: rgba(255, 255, 255, 0.72);
+  --rx-glass-border: rgba(90, 33, 147, 0.12);
+  
+  /* Backgrounds */
+  --background: #FFFFFF;
+  --foreground: #0D0B14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    border-color: var(--color-rx-glass-border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Typography Scale */
+  .rx-display-xl {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+  .rx-display-lg {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .rx-display-md {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(36px, 4vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .rx-heading-xl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  .rx-heading-lg {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(22px, 2.5vw, 36px);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .rx-heading-md {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.4;
+  }
+
+  .rx-body-lg {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .rx-body-md {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .rx-body-sm {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .rx-mono {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  .rx-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Utilities */
+@layer utilities {
+  .glass-bg {
+    background: var(--rx-glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+  
+  .text-gradient {
+    background: var(--rx-grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: var(--rx-grad-primary);
+  }
+
+  .border-gradient {
+    border-image: var(--rx-grad-border) 1;
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 40s linear infinite;
+  }
+  
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
