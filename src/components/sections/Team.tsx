@@ -30,7 +30,7 @@ const founders = [
     name: "Jitendra Uikey",
     role: "Co-Founder & Chief Marketing & Sales Officer (CMSO)",
     tags: ["Sales Strategy", "Marketing Systems", "Growth"],
-    image: null,
+    image: "/Team/Jitendra Uikey.PNG",
     initials: "JU",
   },
   {
@@ -52,7 +52,7 @@ const team = [
   { name: "Asmit Pendam", role: "Offline Sales & Field Marketing Executive", image: "/Team/Asmit Pendam - Sales Executive.png", initials: "AP" },
   { name: "Vivek Dhone", role: "Senior Video Editor & Visual Content Specialist", image: null, initials: "VD" },
   { name: "Antara Shinde", role: "Lead Qualification Executive", image: null, initials: "AS" },
-  { name: "Lobina Barsagade", role: "Lead Qualification Executive", image: null, initials: "LB" },
+  { name: "Lobina Barsagade", role: "Lead Qualification Executive", image: "/Team/Lobina Barsagade.png", initials: "LB" },
 ];
 
 function TeamCard({ member, isFounder = false }: { member: any; isFounder?: boolean }) {

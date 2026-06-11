@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Scaling brands beyond reach through performance marketing, intelligent systems, and premium creatives.",
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo.svg',
   },
 };
 

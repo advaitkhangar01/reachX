@@ -16,6 +16,22 @@ import { useMagnetic } from "@/hooks/useMagnetic";
 
 const caseStudies = [
   {
+    id: "bigscrew",
+    name: "Big Screw",
+    industry: "Industrial · B2B",
+    metric: "10X",
+    label: "Faster Execution",
+    landscape: "/Case-study/Big Screw Landscape.jpg.jpeg",
+    portrait: "/Case-study/Big Screw 4 X 5.jpg.jpeg",
+    description: "Designed a targeted performance marketing strategy for a leading industrial ground screw manufacturer, focusing on generating high-intent B2B inquiries and lowering lead costs.",
+    results: [
+      { label: "Lead Cost", value: "Reduced" },
+      { label: "Inquiries", value: "Qualified" },
+      { label: "Growth", value: "Consistent" },
+    ],
+    accent: "bg-rx-orange"
+  },
+  {
     id: "pyramid",
     name: "Pyramid Group",
     industry: "Infrastructure",

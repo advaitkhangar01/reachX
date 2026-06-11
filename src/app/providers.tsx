@@ -9,6 +9,14 @@ export default function Providers({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3600); // Matches Preloader exit + buffer
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 1.6,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -26,20 +34,17 @@ export default function Providers({ children }: { children: ReactNode }) {
       lenis.start();
     }
 
+    let frameId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      frameId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3600); // Matches Preloader exit + buffer
+    frameId = requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
-      clearTimeout(timer);
+      cancelAnimationFrame(frameId);
     };
   }, [isLoading]);
 
