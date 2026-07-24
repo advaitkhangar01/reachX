@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { TeamBackground } from "@/components/ui/TeamBackground";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
-import { MessageCircle, Mail, Link, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const founders = [
@@ -44,90 +42,40 @@ const founders = [
     name: "Vipul Agrawal",
     role: "Business Expansion & Franchise Development",
     tags: ["Franchise Expansion", "Business Development", "Franchise Scale"],
-    image: "/Team/Vipul Agrawal - Business expansion & franchise development.png",
+    image: "/Team/Vipul Agrawal - Business expansion and franchise development.png",
     initials: "VA",
   },
 ];
 
 function TeamCard({ member, isFounder = false }: { member: any; isFounder?: boolean }) {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
   return (
     <motion.div
       variants={isFounder ? scaleIn : fadeUp}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       className={cn(
         "group relative flex flex-col",
         isFounder ? "gap-6" : "gap-4"
       )}
     >
-      {/* Image Container (Tilts) */}
-      <motion.div
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-        }}
+      {/* Image Container */}
+      <div
         className={cn(
-          "relative perspective-1000 overflow-hidden rounded-[2rem] border border-rx-glass-border/20 shadow-rx-lg transition-all duration-500 group-hover:border-rx-purple-vivid/30",
+          "relative overflow-hidden rounded-[2rem] border border-rx-glass-border/20 shadow-rx-lg bg-[#F8F7FF]",
           isFounder ? "aspect-[3/4]" : "aspect-[1/1.2]"
         )}
       >
-        <div style={{ transform: "translateZ(50px)" }} className="absolute inset-0">
-          {member.image ? (
-            <div className="absolute inset-0 bg-[#F8F7FF]">
-              <Image
-                src={member.image}
-                alt={member.name}
-                fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-rx-purple-deep/10 to-rx-magenta/10 flex items-center justify-center">
-              <span className="rx-display-xl text-rx-purple-deep/20 font-bold select-none">{member.initials}</span>
-            </div>
-          )}
-          
-          {/* Subtle overlay for pro look */}
-          <div className="absolute inset-0 bg-gradient-to-t from-rx-base-01/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
-          {/* Social Links Overlay (Only on hover) */}
-          <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 bg-rx-base-01/20 backdrop-blur-[2px]">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-rx-purple-deep hover:bg-rx-purple-vivid hover:text-white transition-all shadow-rx-md">
-              <Link size={18} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-rx-purple-deep hover:bg-rx-magenta hover:text-white transition-all shadow-rx-md">
-              <X size={18} />
-            </a>
+        {member.image ? (
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-rx-purple-deep/10 to-rx-magenta/10 flex items-center justify-center">
+            <span className="rx-display-xl text-rx-purple-deep/20 font-bold select-none">{member.initials}</span>
           </div>
-        </div>
-      </motion.div>
+        )}
+      </div>
 
       {/* Info Block (Static below) */}
       <div className={cn("px-2", isFounder ? "text-center" : "text-left")}>
