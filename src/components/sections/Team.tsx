@@ -40,19 +40,13 @@ const founders = [
     image: "/Team/Advait Khangar - CTO.png",
     initials: "AK",
   },
-];
-
-const team = [
-  { name: "Chaitanya Yawale", role: "Business Development Manager & Operations Executive", image: "/Team/Chaitnya Yawale -  COO.png", initials: "CY" },
-  { name: "Divya Khawas", role: "Graphic Designer & Visual Media Editor", image: "/Team/Divya Khawas - Graphic Designer.png", initials: "DK" },
-  { name: "Anuradha Baghele", role: "Franchise Expansion & Business Development Executive", image: "/Team/Anuradha Baghele - Business Developer.png", initials: "AB" },
-  { name: "Rimzim Mahiti", role: "Lead Qualification Executive (Inbound Sales & Coordination)", image: "/Team/Rimzim Mahiti - Business Developer.png", initials: "RM" },
-  { name: "Jiya Rajpoot", role: "Creative Content Strategist & Script Writer", image: "/Team/Jiya Rajput -  Script Writer.png", initials: "JR" },
-  { name: "Mihir Dhotkar", role: "Associate Video Editor (Freelance Collaborator)", image: null, initials: "MD" },
-  { name: "Asmit Pendam", role: "Offline Sales & Field Marketing Executive", image: "/Team/Asmit Pendam - Sales Executive.png", initials: "AP" },
-  { name: "Vivek Dhone", role: "Senior Video Editor & Visual Content Specialist", image: null, initials: "VD" },
-  { name: "Antara Shinde", role: "Lead Qualification Executive", image: null, initials: "AS" },
-  { name: "Lobina Barsagade", role: "Lead Qualification Executive", image: "/Team/Lobina Barsagade.png", initials: "LB" },
+  {
+    name: "Vipul Agrawal",
+    role: "Business Expansion & Franchise Development",
+    tags: ["Franchise Expansion", "Business Development", "Franchise Scale"],
+    image: "/Team/Vipul Agrawal - Business expansion & franchise development.png",
+    initials: "VA",
+  },
 ];
 
 function TeamCard({ member, isFounder = false }: { member: any; isFounder?: boolean }) {
@@ -196,33 +190,12 @@ export default function Team() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
         >
           {founders.map((founder) => (
             <TeamCard key={founder.name} member={founder} isFounder />
           ))}
         </motion.div>
-
-        {/* Specialists Section */}
-        <div className="pt-20 border-t border-rx-glass-border/10">
-          <div className="flex items-center gap-6 mb-16">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-rx-glass-border/20" />
-            <h3 className="rx-mono text-[10px] font-bold text-rx-text-muted uppercase tracking-[0.4em]">Core Specialists</h3>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-rx-glass-border/20" />
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
-          >
-            {team.map((member) => (
-              <TeamCard key={member.name} member={member} />
-            ))}
-          </motion.div>
-        </div>
       </div>
     </SectionWrapper>
   );
