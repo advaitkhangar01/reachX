@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Achievements from "@/components/sections/Achievements";
 
-const Projects = dynamic(() => import("@/components/sections/Projects"), { ssr: true });
+const CampaignsShowcase = dynamic(() => import("@/components/sections/CampaignsShowcase"), { ssr: true });
 const Services = dynamic(() => import("@/components/sections/Services"), { ssr: true });
 const Team = dynamic(() => import("@/components/sections/Team"), { ssr: true });
 const CaseStudies = dynamic(() => import("@/components/sections/CaseStudies"), { ssr: true });
@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Achievements />
-      <Projects />
+      <CampaignsShowcase />
       <Services />
       <Team />
       <CaseStudies />
