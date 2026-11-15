@@ -13,9 +13,9 @@ import { useMagnetic } from "@/hooks/useMagnetic";
 const services = [
   {
     id: "01",
-    title: "Performance Marketing",
-    description: "Data-driven lead generation and brand scaling through precision-targeted Meta, Google, and LinkedIn ad systems.",
-    features: ["Meta Ads", "Google Search", "YouTube Scaling"],
+    title: "Meta Ads & SMMA Performance",
+    description: "Full-funnel social media marketing agency (SMMA) infrastructure and certified Meta ads specialist architectures that systematically scale brand revenue.",
+    features: ["Meta Ads Specialist", "Conversion API (CAPI)", "High-ROAS Funnels"],
     icon: Megaphone,
     color: "#5A2193",
     outcome: "25–40% lead quality improvement",

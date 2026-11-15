@@ -54,7 +54,7 @@ export default function Hero() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 <span className="rx-mono text-rx-text-muted text-[10px]">
-                  15+ Brands Scaled → 140+ Outlets Enabled
+                  #1 SMMA & Meta Ads Specialist Near You • 15+ Brands Scaled
                 </span>
               </div>
             </motion.div>
@@ -80,8 +80,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="rx-body-lg text-rx-text-secondary mb-10 max-w-xl">
-              We engineer intelligent growth systems that turn brands into market leaders. 
-              Performance marketing meets luxury editorial design.
+              The premier social media marketing agency (SMMA) and Meta ads specialist engineered to turn ambitious brands into market leaders. High-ROAS performance marketing meets luxury editorial execution.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-12">

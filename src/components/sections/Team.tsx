@@ -9,9 +9,17 @@ import { TeamBackground } from "@/components/ui/TeamBackground";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
-const founders = [
+interface Founder {
+  name: string;
+  role: string;
+  tags: string[];
+  image: string | null;
+  initials: string;
+}
+
+const founders: Founder[] = [
   {
-    name: "Shreyash Gadwe",
+    name: "Shreyash Gadhwe",
     role: "Founder & Chief Executive Officer (CEO)",
     tags: ["Growth Strategy", "Leadership", "Visionary"],
     image: "/Team/Shreyash Gadwe - Founder.png",
@@ -32,37 +40,29 @@ const founders = [
     initials: "JU",
   },
   {
+    name: "Chaitanya Yawale",
+    role: "Co-Founder & Chief Operations Officer (COO)",
+    tags: ["Operations Management", "Business Strategy", "Scale"],
+    image: "/Team/Chaitnya Yawale -  COO.png",
+    initials: "CY",
+  },
+  {
     name: "Advait Khangar",
     role: "Chief Technology Officer (CTO)",
     tags: ["Systems Architecture", "Tech Strategy", "Innovation"],
     image: "/Team/Advait Khangar - CTO.png",
     initials: "AK",
   },
-  {
-    name: "Vipul Agrawal",
-    role: "Business Expansion & Franchise Development",
-    tags: ["Franchise Expansion", "Business Development", "Franchise Scale"],
-    image: "/Team/Vipul Agrawal - Business expansion and franchise development.png",
-    initials: "VA",
-  },
 ];
 
-function TeamCard({ member, isFounder = false }: { member: any; isFounder?: boolean }) {
+function TeamCard({ member }: { member: Founder }) {
   return (
     <motion.div
-      variants={isFounder ? scaleIn : fadeUp}
-      className={cn(
-        "group relative flex flex-col",
-        isFounder ? "gap-6" : "gap-4"
-      )}
+      variants={scaleIn}
+      className="group relative flex flex-col gap-6"
     >
       {/* Image Container */}
-      <div
-        className={cn(
-          "relative overflow-hidden rounded-[2rem] border border-rx-glass-border/20 shadow-rx-lg bg-[#F8F7FF]",
-          isFounder ? "aspect-[3/4]" : "aspect-[1/1.2]"
-        )}
-      >
+      <div className="relative overflow-hidden rounded-[2rem] border border-rx-glass-border/20 shadow-rx-lg bg-[#F8F7FF] aspect-[3/4]">
         {member.image ? (
           <Image
             src={member.image}
@@ -77,27 +77,21 @@ function TeamCard({ member, isFounder = false }: { member: any; isFounder?: bool
         )}
       </div>
 
-      {/* Info Block (Static below) */}
-      <div className={cn("px-2", isFounder ? "text-center" : "text-left")}>
+      {/* Info Block */}
+      <div className="px-2 text-center">
         <div className="flex flex-col gap-1">
-          <h3 className={cn(
-            "text-rx-text-primary font-bold tracking-tight transition-colors duration-300 group-hover:text-rx-purple-vivid",
-            isFounder ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
-          )}>
+          <h3 className="text-rx-text-primary font-bold tracking-tight transition-colors duration-300 group-hover:text-rx-purple-vivid text-2xl lg:text-3xl">
             {member.name}
           </h3>
           
-          <div className={cn(
-            "font-semibold uppercase tracking-[0.1em] text-rx-text-muted",
-            isFounder ? "text-[10px] lg:text-xs" : "text-[9px]"
-          )}>
+          <div className="font-semibold uppercase tracking-[0.1em] text-rx-text-muted text-[10px] lg:text-xs">
             <span className="text-gradient bg-gradient-to-r from-rx-purple-deep to-rx-magenta">
               {member.role}
             </span>
           </div>
         </div>
 
-        {isFounder && member.tags && (
+        {member.tags && (
           <div className="flex flex-wrap justify-center gap-2 mt-4">
             {member.tags.map((t: string) => (
               <span key={t} className="px-3 py-1 bg-rx-purple-vivid/5 border border-rx-purple-vivid/10 rounded-full rx-mono text-[9px] text-rx-purple-deep uppercase tracking-wider">
@@ -141,7 +135,7 @@ export default function Team() {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
         >
           {founders.map((founder) => (
-            <TeamCard key={founder.name} member={founder} isFounder />
+            <TeamCard key={founder.name} member={founder} />
           ))}
         </motion.div>
       </div>

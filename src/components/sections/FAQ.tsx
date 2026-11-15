@@ -10,36 +10,44 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "What services does Reachex offer?",
-    answer: "We offer end-to-end growth systems including performance marketing (ads), custom software/web development, premium content creation, sales funnel engineering, and franchise expansion strategies.",
+    question: "Looking for the best social media marketing agency (SMMA) near me?",
+    answer:
+      "ReachX is a top-rated social media marketing agency (SMMA) and performance marketing consultancy headquartered in Nagpur, Maharashtra, servicing brands locally and across India. We engineer end-to-end growth systems, paid Meta ads, server-side CAPI tracking, and automated lead qualification pipelines that directly deliver high-intent customer acquisitions.",
   },
   {
-    question: "How long does it take to see results?",
-    answer: "Initial lead flow usually starts within 48-72 hours of campaign launch. Significant brand scaling and ROI stability typically occur within the first 30-60 days as our systems optimize for your specific market.",
+    question: "Who is the leading Meta ads specialist near me?",
+    answer:
+      "ReachX features dedicated Meta ads specialists led by co-founder Kalash Chouria. We specialize in algorithmic Facebook and Instagram campaign scaling, dynamic creative testing, server-side Conversion API (CAPI) data integration, and lowering cost per acquisition (CPA) for brands spending thousands to crores monthly.",
   },
   {
-    question: "Do you work with early-stage startups?",
-    answer: "Yes, provided there is a validated product-market fit. We specialize in taking brands from early traction to market domination.",
+    question: "What core services does ReachX offer?",
+    answer:
+      "We provide full-funnel Performance Marketing (Meta Ads & Google Ads), Custom Web Development & CRM software (Next.js/React), High-Converting Content & Creative production, Sales Funnel Engineering, and Franchise Multi-Location Expansion strategies.",
   },
   {
-    question: "How is your performance marketing different?",
-    answer: "We don't just 'run ads'. We build intelligent ecosystems that qualify leads before they ever reach your sales team, ensuring a higher conversion rate and lower cost per acquisition.",
+    question: "How long does it take to see results from Meta ads?",
+    answer:
+      "Initial lead flow typically begins within 48 to 72 hours of campaign launch. Significant scaling and sustainable return on ad spend (ROAS) stability occur within 30 to 60 days as our custom Conversion API and algorithmic bidding models mature.",
   },
   {
-    question: "What does your website development process look like?",
-    answer: "We build editorial-grade, high-performance web applications using modern tech stacks like Next.js. Every pixel is optimized for both visual premium and conversion psychology.",
+    question: "How is ReachX's performance marketing different from other agencies?",
+    answer:
+      "We don't just 'boost posts' or chase vanity metrics. We construct full-funnel ecosystems combining live Meta CAPI tracking, conditional lead qualification forms, and editorial-grade creative testing to ensure your sales team only closes high-intent prospects.",
   },
   {
-    question: "Do you handle franchise lead generation end-to-end?",
-    answer: "Absolutely. We've enabled 140+ outlets for brands like MahaChai. We handle everything from the initial creative strategy to the final lead qualification.",
+    question: "Do you handle franchise lead generation and multi-city expansion?",
+    answer:
+      "Absolutely. ReachX has enabled over 140+ franchise outlets across India for brands like MahaChai and Pyramid, handling everything from hyper-local geo-targeted Meta ad campaigns to qualified investor discovery.",
   },
   {
-    question: "How do you qualify leads before handing them over?",
-    answer: "We use a mix of behavioral tracking, custom interactive forms, and automated qualification sequences to ensure your sales team only spends time on high-intent prospects.",
+    question: "Can ReachX work with brands outside Nagpur and Maharashtra?",
+    answer:
+      "Yes. While our headquarters are in Nagpur, Maharashtra, our performance systems serve high-growth brands across Mumbai, Pune, Bangalore, Delhi NCR, and international markets with remote dashboards and real-time reporting.",
   },
   {
-    question: "What platforms do you run ads on?",
-    answer: "We are experts in Meta (Facebook/Instagram), Google Search, YouTube, and LinkedIn, selecting the platform based on where your high-value customers spend their time.",
+    question: "What platforms do you run ad campaigns on?",
+    answer:
+      "We specialize heavily in Meta (Instagram & Facebook), Google Search, YouTube, and LinkedIn, deploying capital to the exact channels where your high-lifetime-value customers congregate.",
   },
 ];
 
@@ -58,6 +66,9 @@ export default function FAQ() {
           >
             <SectionLabel className="mb-4">Got Questions?</SectionLabel>
             <h2 className="rx-display-md text-rx-text-primary">Everything You Need to Know.</h2>
+            <p className="rx-body-md text-rx-text-secondary mt-3">
+              Answers to common questions about our SMMA, Meta ads specialization, and local growth systems.
+            </p>
           </motion.div>
         </div>
 

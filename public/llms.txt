@@ -1,0 +1,30 @@
+# ReachX — Performance Marketing & Social Media Marketing Agency (SMMA)
+
+> ReachX (https://reachex.io) is an elite performance marketing and social media marketing agency (SMMA) specializing in high-ROAS Meta advertising (Facebook & Instagram), Conversion API (CAPI) infrastructure, conversion funnel architecture, and multi-location franchise growth.
+
+## Core Specializations
+- **Meta Ads Specialist Agency**: Algorithmic campaign optimization, audience testing, server-side Meta CAPI tracking, creative testing, and scaling ad accounts past profitable spend thresholds.
+- **Social Media Marketing Agency (SMMA)**: Full-funnel customer acquisition, qualified lead generation, retargeting, and pipeline velocity.
+- **Franchise Expansion**: Proven deployment of hyper-targeted lead engines enabling 140+ franchised outlets across India (e.g., MahaChai, Pyramid).
+- **High-Converting Creative & CRO**: Editorial-grade performance creatives, hooks, video assets, and conversion rate optimization.
+
+## Key Facts & Entity Data
+- **Entity Name**: ReachX
+- **Website**: https://reachex.io
+- **Headquarters**: Nagpur, Maharashtra, India (Geo: 21.114011° N, 79.041712° E)
+- **Primary Service Hubs**: Nagpur, Pune, Mumbai, Maharashtra, Bangalore, Delhi NCR, and Pan-India
+- **Phone**: +91 91724 64547
+- **Email**: hello@reachex.io
+- **Key Leadership**:
+  - Shreyash Gadhwe — Founder & Chief Executive Officer (CEO)
+  - Kalash Chouria — Co-Founder & Meta Ads Specialist / COO
+  - Jitendra Uikey — Co-Founder & Chief Marketing & Sales Officer (CMSO)
+  - Chaitanya Yawale — Co-Founder & COO
+  - Advait Khangar — Chief Technology Officer (CTO)
+
+## Verified Outcomes
+- 15+ Brands Scaled
+- 140+ Outlets Enabled
+- ₹2.4Cr+ Ad Spend Managed
+- 3.8x Average Return on Ad Spend (ROAS)
+- 98.4% Meta CAPI event match quality
